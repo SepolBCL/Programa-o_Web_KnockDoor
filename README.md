@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+KnockDoor 🚪
+O KnockDoor é uma plataforma web orientada para a partilha comunitária e economia colaborativa. A aplicação permite aos utilizadores partilhar recursos (objetos/equipamentos), oferecer ou requisitar serviços e criar ou juntar-se a grupos e comunidades locais.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O objetivo principal é fomentar a entreajuda e simplificar a gestão de empréstimos, alugueres e prestação de serviços entre membros de uma comunidade.
 
-## Available Scripts
+✨ Funcionalidades Principais
+A plataforma está dividida em três eixos principais de partilha e interação:
 
-In the project directory, you can run:
+📦 Gestão de Recursos:
 
-### `npm start`
+Adicionar, visualizar e gerir recursos disponíveis (AddResource, Resource, MyResource).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Sistema de requisição e aluguer de recursos de outros utilizadores (RentResource, MyRentals).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🛠️ Serviços:
 
-### `npm test`
+Oferta e pesquisa de serviços na comunidade (Services, AddService, MyServices).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sistema de requisição de serviços e gestão de pedidos (RequestService, RequestedServices).
 
-### `npm run build`
+🤝 Comunidades e Grupos de Partilha:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Criação e adesão a grupos de partilha específicos (GroupSharing, AddGroupSharing, Community).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Aprovação de novos membros e gestão de acessos aos grupos (AprovalMember).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👤 Gestão de Utilizadores e Autenticação:
 
-### `npm run eject`
+Registo e Login de utilizadores (Login, RegisterModal).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Recuperação e redefinição de palavra-passe (RecoverPassword, ResetPassword).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Configuração de perfil de utilizador (UserConfig).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Gestão de ações pendentes (aprovações de pedidos de recursos ou serviços) (PendingActions, PendingActionsServices).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🛠️ Tecnologias Utilizadas
+O projeto foi desenvolvido com foco no ecossistema JavaScript moderno para o Frontend:
 
-## Learn More
+React.js: Biblioteca principal para a construção da interface de utilizador (UI).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+JSX e CSS3: Para a estruturação e estilização das páginas e componentes (ex: AddResource.css, App.css).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React Context API: Utilizado para a gestão global do estado de autenticação da aplicação (AuthContext.js).
 
-### Code Splitting
+Node.js & NPM: Para a gestão de pacotes e execução do ambiente de desenvolvimento.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Integração API REST: Comunicação assíncrona com o backend através de serviços configurados (api.js, resourceService.js).
 
-### Analyzing the Bundle Size
+📁 Estrutura do Projeto
+A arquitetura do código fonte (dentro da pasta src/) está organizada da seguinte forma:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+/components: Componentes reutilizáveis da interface (ex: Header.jsx, SearchBar.jsx, FilterModal.jsx, InfoCardGenerico.jsx).
 
-### Making a Progressive Web App
+/pages: Componentes que representam as páginas inteiras da aplicação (ex: Home.jsx, Login.jsx, Community.jsx).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+/contexts: Gestão de estados globais, como sessões de utilizadores (AuthContext.js).
 
-### Advanced Configuration
+/services: Ficheiros responsáveis pelas chamadas HTTP à API do backend e lógica de negócio de rede (api.js, handleLogout.js).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+/styles: Folhas de estilo CSS organizadas por componente ou página.
 
-### Deployment
+/public & /wwwroot: Ficheiros estáticos e imagens dos recursos/serviços (KD_logo.png, diretórios de imagens grupos/, recursos/, servicos/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🚀 Como Executar o Projeto Localmente
+Para correres este projeto na tua máquina, vais precisar de ter o Node.js instalado.
 
-### `npm run build` fails to minify
+Clonar o repositório (se aplicável):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bash
+git clone [URL_DO_REPOSITORIO]
+cd KnockDoor
+Instalar as dependências:
+Na raiz do projeto (onde se encontra o package.json), executa:
+
+Bash
+npm install
+Iniciar o servidor de desenvolvimento:
+
+Bash
+npm start
+A aplicação deverá abrir automaticamente no browser no endereço http://localhost:3000.
+
+Gerar a build de produção:
+Para compilar a aplicação para produção, otimizada para melhor performance:
+
+Bash
+npm run build
+Os ficheiros compilados ficarão disponíveis na pasta build/.
+
+Projeto desenvolvido no âmbito da Unidade Curricular de Programação Web.
